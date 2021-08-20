@@ -1,11 +1,11 @@
 import React from 'react'
 import './App.css';
 import { useSelector,useDispatch } from "react-redux";
-import { AddEmployeeAction} from "./actions/index";
 import EmployeeList from './EmployeeList';
 import { AddEmployee } from './AddEmployee';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import {Link} from 'react-router-dom'
+import './EmployeeList.css'
 
 
 
@@ -21,7 +21,7 @@ function App() {
     <Router>
     <div className="App">
     <Link to="/employeelist/addemployee">
-      <button>Add Employee</button>
+      <button className="btn">Add Employee</button>
     </Link>
     <EmployeeList/>
     <Switch>

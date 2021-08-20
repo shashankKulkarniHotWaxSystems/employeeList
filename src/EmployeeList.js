@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css';
 import { useSelector} from "react-redux";
 // import { AddEmployeeAction } from "./actions/index";
+import './EmployeeList.css'
 
  const EmployeeList = () => {
     var myState = useSelector((state) => state.addNewEmployeeMethod.employes)
@@ -10,12 +11,12 @@ import { useSelector} from "react-redux";
   
 
     return (
-      <div className="App">
-      <h1>employe list component</h1>
+      <div className="EmployeeList">
+      <div><h1 className="headingEL" >Employe List</h1></div>
       <table>
       <thead>
-      <tr>
-        <th>Name</th>
+      <tr className="headtr" >
+        <th >Name</th>
         <th>Email</th>
         <th>Mob.No.</th>
       </tr>

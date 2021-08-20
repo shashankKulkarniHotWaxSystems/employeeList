@@ -61,7 +61,7 @@ export const AddEmployee = () => {
        onChange={(e)=> setmobno(e.target.value)}
        />
     </div>
-        <button className="btn">Save</button>
+        <button className="btnAE">Save</button>
         </form>
         </div>
   );

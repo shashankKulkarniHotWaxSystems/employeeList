@@ -1,0 +1,53 @@
+.EmployeeList{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+table{
+    margin-top: 30px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.headtr{
+    margin-top: 90px;
+}
+th{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: darkgray;
+    border-radius: 5px;
+    width: 20%;
+    size: 30px;
+
+
+}
+td{
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 30px;
+    
+    
+}
+.btn{
+    margin-top:-5px;
+    float: right;
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: darkgray;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px grey;
+    
+}
+.EmployeeList{
+    margin-left: auto;
+    margin-right: auto;
+}
+.headingEL{
+    margin-left: 10%;
+}

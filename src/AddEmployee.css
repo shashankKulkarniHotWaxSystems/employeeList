@@ -3,8 +3,38 @@
     /* position: fixed; */
     text-align: center;
     position: absolute;
-    top: 200px;
-    left: 35%;
-    margin: 60px;
+    top: 170px;
+    left: 27%;
+   width: 50%;
+   height: 50%;
+   background-color:white;
+   border-radius: 5px;
+   border: black 2px solid;
+   
 
+}
+form{
+    margin-top: 5%;
+}
+input{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+    background-color: lightgray
+    
+
+}
+
+.btnAE{
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    box-shadow: 10px 10px 5px grey;
+    background-color: grey;
 }
