@@ -4,9 +4,11 @@ import { useState } from 'react';
 import { AddEmployeeAction } from './actions/index'
 import {useHistory} from 'react-router-dom'
 import './AddEmployee.css';
+import { userSchema } from './validations/AdEmpValidation';
 
 
-export const AddEmployee = () => {
+export const  AddEmployee = () => {
+  var validornot = ""
   let history = useHistory();
   var dispatch = useDispatch();
    const [name, setName] = useState("");
@@ -15,6 +17,13 @@ export const AddEmployee = () => {
   
    const createEmploye = (e)=>{
      e.preventDefault(); 
+
+     let formData={
+      name: e.target[0].value ,
+      email: e.target[1].value ,
+      mobno: e.target[2].value 
+      }
+
      console.log(name+email+mobno);
      const employeData = {
        name:name,
@@ -23,9 +32,29 @@ export const AddEmployee = () => {
        
 
      }
+  
+     let isValid = userSchema.isValid(formData).then((result)=>{
+      validornot = result
+     });
+     console.log(validornot);
+     console.log(`all ${isValid}`);
+  // if(isValid===true){
+  //   alert("All Details Enterd Properly")
+  // }
+  let error = userSchema.validate(formData).catch((err)=>{
+    console.log(err.name);
+    console.log(err.errors);
+    alert(err.errors)
+  })
+  
+  if(validornot===true){
      
      dispatch(AddEmployeeAction(employeData))
      history.push("")
+  }
+  else{
+    alert("plz enter details properly")
+  }
      
    }
    

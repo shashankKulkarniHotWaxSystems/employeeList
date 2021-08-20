@@ -1,10 +1,16 @@
 import React from 'react'
 import './App.css';
 import { useSelector} from "react-redux";
-// import { AddEmployeeAction } from "./actions/index";
+import { useEffect } from 'react';
 import './EmployeeList.css'
 
  const EmployeeList = () => {
+  useEffect(()=>{alert("Data Uploaded Successfully")
+  // return ()=>{
+  //   console.log("");
+  // }
+},[])
+ 
     var myState = useSelector((state) => state.addNewEmployeeMethod.employes)
     console.log("mystate");
     console.log(myState);
