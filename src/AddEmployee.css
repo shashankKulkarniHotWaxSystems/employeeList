@@ -13,6 +13,12 @@
    
 
 }
+.errormsg{
+    background-color: red;
+    width: 100%;
+    margin-left: -1000px;
+    transition: 500ms;
+}
 form{
     margin-top: 5%;
 }

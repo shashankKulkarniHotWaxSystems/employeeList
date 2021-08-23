@@ -8,6 +8,7 @@ import { userSchema } from './validations/AdEmpValidation';
 
 
 export const  AddEmployee = () => {
+  var errors=""
   var validornot = ""
   let history = useHistory();
   var dispatch = useDispatch();
@@ -41,7 +42,7 @@ export const  AddEmployee = () => {
         history.push("")
      }
      else{
-       alert("plz enter details properly")
+      //  alert("plz enter details properly")
      }
       console.log("result"+result);
      });
@@ -53,10 +54,13 @@ export const  AddEmployee = () => {
   let error = userSchema.validate( employeData).catch((err)=>{
     console.log(err.name);
     console.log(err.errors);
-    alert(err.errors)
+    errors = err.errors
+    document.getElementById("errorId").innerHTML=err.errors;
+    document.getElementById("errorId").style.marginLeft="0px"
+    // alert(err.errors)
   })
-  
- 
+  console.log("errors");
+ console.log(+errors);
      
    }
    
@@ -67,6 +71,9 @@ export const  AddEmployee = () => {
     <div>
     <div className="addemp">
     <h1>Add New Employee</h1>
+    <div>
+      <h3 className="errormsg" id="errorId" >{errors}</h3>
+    </div>
     <form onSubmit={(e)=> createEmploye(e)}>
     <div>
       <input
