@@ -63,6 +63,7 @@ export const  AddEmployee = () => {
  console.log(+errors);
      
    }
+
    
 
   // const myState = useSelector((state) => state.changeTheNumber)
@@ -81,7 +82,6 @@ export const  AddEmployee = () => {
        placeholder="Name" 
        value={name}
        onChange={(e)=> setName(e.target.value)}
-       
        />
     </div>
     <div>

@@ -14,9 +14,12 @@ const initialstate = {
             name:"kapil",
             email:"k@test.com",
             mobno:"45678"
-        }
+        },
+        // result
+        
     ]
 };
+
     const addNewEmployeeMethod=(state = initialstate, action)=>{
         console.log(action.payload);
         switch(action.type){
