@@ -26,6 +26,10 @@ input{
     
 
 }
+.msgBox{
+    border: black;
+    background-color: brown;
+}
 
 .btnAE{
     margin-top: 10px;

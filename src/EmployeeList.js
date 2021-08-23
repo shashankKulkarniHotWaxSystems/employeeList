@@ -3,13 +3,20 @@ import './App.css';
 import { useSelector} from "react-redux";
 import { useEffect } from 'react';
 import './EmployeeList.css'
+import { AddEmployee } from './AddEmployee';
 
  const EmployeeList = () => {
-  useEffect(()=>{alert("Data Uploaded Successfully")
-  // return ()=>{
-  //   console.log("");
-  // }
-},[])
+  useEffect(()=> {
+
+    document.getElementById("msgid").style.marginLeft="0px";
+
+    setTimeout(() => {
+    document.getElementById("msgid").style.marginLeft="-2000px";
+
+    }, 2000);
+   
+
+})
  
     var myState = useSelector((state) => state.addNewEmployeeMethod.employes)
     console.log("mystate");
@@ -19,6 +26,7 @@ import './EmployeeList.css'
     return (
       <div className="EmployeeList">
       <div><h1 className="headingEL" >Employe List</h1></div>
+      <div className="msgclass" id="msgid" ><h3>Data Uploaded Successfully</h3></div>
       <table>
       <thead>
       <tr className="headtr" >

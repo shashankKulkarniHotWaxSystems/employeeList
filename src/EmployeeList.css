@@ -4,6 +4,15 @@
     margin-right: auto;
 
 }
+.msgclass{
+    width: 1300px;
+    /* display: none; */
+    margin-left: -1000px;
+    /* border: green; */
+    background-color: green;
+    transition: 500ms;
+    
+}
 table{
     margin-top: 30px;
     text-align: center;

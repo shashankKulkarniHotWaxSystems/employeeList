@@ -18,11 +18,11 @@ export const  AddEmployee = () => {
    const createEmploye = (e)=>{
      e.preventDefault(); 
 
-     let formData={
-      name: e.target[0].value ,
-      email: e.target[1].value ,
-      mobno: e.target[2].value 
-      }
+    //  let formData={
+    //   name: e.target[0].value ,
+    //   email: e.target[1].value ,
+    //   mobno: e.target[2].value 
+    //   }
 
      console.log(name+email+mobno);
      const employeData = {
@@ -33,28 +33,30 @@ export const  AddEmployee = () => {
 
      }
   
-     let isValid = userSchema.isValid(formData).then((result)=>{
+     let isValid = userSchema.isValid(employeData).then((result)=>{
       validornot = result
+      if(validornot===true){
+     
+        dispatch(AddEmployeeAction(employeData))
+        history.push("")
+     }
+     else{
+       alert("plz enter details properly")
+     }
+      console.log("result"+result);
      });
      console.log(validornot);
      console.log(`all ${isValid}`);
   // if(isValid===true){
   //   alert("All Details Enterd Properly")
   // }
-  let error = userSchema.validate(formData).catch((err)=>{
+  let error = userSchema.validate( employeData).catch((err)=>{
     console.log(err.name);
     console.log(err.errors);
     alert(err.errors)
   })
   
-  if(validornot===true){
-     
-     dispatch(AddEmployeeAction(employeData))
-     history.push("")
-  }
-  else{
-    alert("plz enter details properly")
-  }
+ 
      
    }
    
@@ -62,6 +64,7 @@ export const  AddEmployee = () => {
   // const myState = useSelector((state) => state.changeTheNumber)
 
   return (
+    <div>
     <div className="addemp">
     <h1>Add New Employee</h1>
     <form onSubmit={(e)=> createEmploye(e)}>
@@ -92,6 +95,7 @@ export const  AddEmployee = () => {
     </div>
         <button className="btnAE">Save</button>
         </form>
+        </div>
         </div>
   );
 }
