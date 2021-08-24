@@ -21,7 +21,7 @@ import { AddEmployee } from './AddEmployee';
     var myState = useSelector((state) => state.addNewEmployeeMethod.employes)
     console.log("mystate");
     console.log(myState);
-  
+   
 
     return (
       <div className="EmployeeList">

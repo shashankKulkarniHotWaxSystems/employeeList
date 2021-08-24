@@ -6,7 +6,8 @@ import { AddEmployee } from './AddEmployee';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import './EmployeeList.css'
-import { apicall } from './actions/getData';
+import { apicall } from './actions/index';
+import { Apidata } from './Apidata';
 
 
 
@@ -16,19 +17,22 @@ import { apicall } from './actions/getData';
 function App() {
   const dispatch = useDispatch();
 
- const callTheApi=()=>{
-   dispatch(apicall("hello"));
+ function callTheApi(){
+   
+  dispatch(apicall());
    
 
  }
 
-  const myState = useSelector((state) => state.changeTheNumber)
+
 
   return (
     <Router>
     <div className="App">
     <span>
-    <button className="btn" onClick={apicall()} >Show Data</button>
+    <Link to="/apidata" >
+    <button className="btn" onClick={callTheApi()} >Show Data</button>
+    </Link>
     <Link to="/employeelist/addemployee">
       <button className="btn">Add Employee</button>
     </Link>
@@ -36,6 +40,7 @@ function App() {
     <EmployeeList/>
     <Switch>
     <Route exact path="/employeelist/addemployee" component={AddEmployee} />
+    <Route exact path="/apidata" component={Apidata} />
     </Switch>
     </div>
     </Router>
